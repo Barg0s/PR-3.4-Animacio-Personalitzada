@@ -29,14 +29,6 @@ public class Main implements ApplicationListener {
     private Rectangle up, down, left, right;
 
     Monigote monigote;
-    // POSICIÓN Y VELOCIDAD
-    private float x = 100;
-    private float y = 100;
-    private float speed = 200f;
-
-    // ANIMACIONES
-    private Animation<TextureRegion> animAbajo, animArriba, animIzquierda, animDerecha;
-    private Animation<TextureRegion> animActual;
 
     @Override
     public void create() {
@@ -46,7 +38,6 @@ public class Main implements ApplicationListener {
         monigote = new Monigote("Walk-Anim.png", 100, 100, 200f);
         stateTime = 0f;
 
-        // Configuración de áreas táctiles para el control
         float w = viewport.getWorldWidth();
         float h = viewport.getWorldHeight();
         up = new Rectangle(0, h * 2f / 3f, w, h / 3f);
