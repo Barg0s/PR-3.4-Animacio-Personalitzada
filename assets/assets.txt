@@ -1,3 +1,4 @@
 Walk-Anim.png
+background.jpg
 libgdx.png
 sprite-animation4.png

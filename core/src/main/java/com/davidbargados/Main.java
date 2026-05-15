@@ -18,6 +18,7 @@ public class Main implements ApplicationListener {
     private FitViewport viewport;
 
     private float stateTime;
+    private Texture background;
 
     // Direcciones
     private static final int IDLE = 0;
@@ -44,6 +45,8 @@ public class Main implements ApplicationListener {
         down = new Rectangle(0, 0, w, h / 3f);
         left = new Rectangle(0, 0, w / 3f, h);
         right = new Rectangle(w * 2f / 3f, 0, w / 3f, h);
+        background = new Texture("background.jpg");
+
     }
 
     protected int virtual_joystick_control() {
@@ -108,6 +111,7 @@ public class Main implements ApplicationListener {
         viewport.apply();
         batch.setProjectionMatrix(viewport.getCamera().combined);
         batch.begin();
+        batch.draw(background,0, 0,viewport.getWorldWidth(),viewport.getWorldHeight());
 
         TextureRegion frame = monigote.getAnimActual().getKeyFrame(monigote.getStateTime(), true);
 
